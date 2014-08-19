@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.saic.uicds.clients.em</groupId>
+        <artifactId>com.saic.uicds.clients.em</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>com.saic.uicds.clients.em.capAlertViewer</artifactId>
+    <packaging>jar</packaging>
+    <name>UICDS Shapefile Client</name>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>create-capalertclient-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>CapAlertClient</finalName>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.saic.uicds.clients.em.capAlertViewer.CapAlertClient</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>com.saic.uicds.clients</groupId>
+            <artifactId>com.saic.uicds.clients.util</artifactId>
+            <version>${clients-util.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.saic.uicds.clients.em</groupId>
+            <artifactId>com.saic.uicds.clients.em.async</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>
